@@ -84,7 +84,7 @@ matrix:
     - python: "nightly"
       env: PRE=--pre
     - os: osx
-      language: generic  # https://github.com/travis-ci/travis-ci/issues/2312
+      language: generic  # https://github.com/travis-ci/travis-ci/issues/2312 s
       only: master
       cache:
         # As for now travis caches only "$HOME/.cache/pip"
