@@ -597,6 +597,11 @@ validate_legend_loc = ValidateInStrings(
      'upper center',
      'center'], ignorecase=True)
 
+validate_title_loc = ValidateInStrings(
+    'title_loc',
+    ['right',
+     'left',
+     'center'], ignorecase=True)
 
 def validate_svg_fonttype(s):
     if s in ["none", "path"]:
@@ -1157,6 +1162,7 @@ defaultParams = {
     'axes.facecolor':        ['white', validate_color],  # background color
     'axes.edgecolor':        ['black', validate_color],  # edge color
     'axes.linewidth':        [0.8, validate_float],  # edge linewidth
+    'axes.titlelocation':    ['center', validate_title_loc],
 
     'axes.spines.left':      [True, validate_bool],  # Set visibility of axes
     'axes.spines.right':     [True, validate_bool],  # 'spines', the lines

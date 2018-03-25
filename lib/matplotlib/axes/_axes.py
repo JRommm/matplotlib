@@ -126,7 +126,7 @@ class Axes(_AxesBase):
             raise ValueError("'%s' is not a valid location" % loc)
         return title.get_text()
 
-    def set_title(self, label, fontdict=None, loc="center", pad=None,
+    def set_title(self, label, fontdict=None, loc=None, pad=None,
                     **kwargs):
         """
         Set a title for the axes.
@@ -169,9 +169,11 @@ class Axes(_AxesBase):
             properties.
         """
         try:
+            if (loc == None):
+                loc = rcParams['axes.titlelocation'].lower()
             title = {'left': self._left_title,
-                     'center': self.title,
-                     'right': self._right_title}[loc.lower()]
+                    'center': self.title,
+                    'right': self._right_title}[loc.lower()]
         except KeyError:
             raise ValueError("'%s' is not a valid location" % loc)
         default = {
