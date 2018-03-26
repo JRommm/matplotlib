@@ -169,7 +169,7 @@ class Axes(_AxesBase):
             properties.
         """
         try:
-            if (loc == None):
+            if loc is None:
                 loc = rcParams['axes.titlelocation'].lower()
             title = {'left': self._left_title,
                     'center': self.title,
